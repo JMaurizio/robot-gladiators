@@ -11,7 +11,12 @@ var fight = function(enemy) {
     
     // Fight or Skip prompt
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
-  
+
+    if (promptFight === "" || promptFight === null) {
+      window.alert("You need to provide a valid answer! Please try again.");
+      return fightOrSkip();
+    }
+
     // if player choses to fight, then fight
     if (promptFight === "fight" || promptFight === "FIGHT") {
       // remove enemy's health by subtracting the amount set in the playerInfo.attack variable
